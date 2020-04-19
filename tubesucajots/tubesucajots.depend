@@ -1,0 +1,20 @@
+# depslib dependency file v1.0
+1587279539 source:d:\sd\tubesucajots\artis.cpp
+	"artis.h"
+
+1587279505 d:\sd\tubesucajots\artis.h
+
+1514140574 source:d:\sd\tubesucajots\main.cpp
+	<iostream>
+
+1587279560 source:d:\sd\tubesucajots\relasi.cpp
+	"relasi.h"
+
+1587279510 d:\sd\tubesucajots\relasi.h
+
+1587288136 source:d:\sd\tubesucajots\pelem.cpp
+	"pelem.h"
+
+1587285241 d:\sd\tubesucajots\pelem.h
+	<iostream>
+
