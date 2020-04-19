@@ -1,6 +1,6 @@
 #include "pelem.h"
 
-void createListFilm(listFilm L){
+void createListFilm(listFilm &L){
     firstfilm(L) = NIL;
     lastfilm(L) = NIL;
 }
@@ -158,7 +158,7 @@ void printFilm(listFilm L){
         adrfilm P;
 
         P = firstfilm(L);
-        /** while (P != lastfilm(L)){
+        while (P != lastfilm(L)){
             cout << "~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~" << endl;
             cout << "Film           : " << infofilm(P).film << endl;
             cout << "Genre          : " << infofilm(P).genre << endl;
@@ -166,7 +166,7 @@ void printFilm(listFilm L){
             cout << "Budget         : " << infofilm(P).budget << endl;
             cout << "~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~" << endl;
             P = nextfilm(P);
-        } **/
+        }
         cout << "~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~" << endl;
         cout << "Film           : " << infofilm(P).film << endl;
         cout << "Genre          : " << infofilm(P).genre << endl;
