@@ -29,13 +29,13 @@ struct listFilm{
     adrfilm lastfilm;
 };
 
-void createListFilm(listFilm L);
+void createListFilm(listFilm &L);
 void createElmLF(adrfilm &P);
 void insertlastFilm(listFilm &L, adrfilm P);
 void editFilm(listFilm &L, adrfilm P);
 void deletefirstFilm(listFilm &L, adrfilm &P);
 void deletelastFilm(listFilm &L, adrfilm &P);
-void deleteElmFilm(listFilm &L, adrfilm &P);
+void deleteElmFilm(listFilm &L, adrfilm &P, string x);
 adrfilm caridataFilm(listFilm L, string x);
 void printFilm(listFilm L);
 
