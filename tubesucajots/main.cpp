@@ -1,9 +1,23 @@
-#include <iostream>
+#include "pelem.h"
 
-using namespace std;
+int main(){
+    listFilm L;
+    adrfilm P;
+    string x;
 
-int main()
-{
-    cout << "Hello world!" << endl;
+    createListFilm(L);
+    createElmLF(P);
+    insertlastFilm(L, P);
+    createElmLF(P);
+    insertlastFilm(L, P);
+    printFilm(L);
+    editFilm(L, P);
+    printFilm(L);
+    cout << "Data yang ingin dihapus";
+    cin >> x;
+    deleteElmFilm(L, P, x);
+    printFilm(L);
+
     return 0;
 }
+
