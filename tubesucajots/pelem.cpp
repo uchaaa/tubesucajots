@@ -14,19 +14,23 @@ void createElmLF(adrfilm &P){
     string sutradara;
     int budget;
 
-    cout << "Nama Film : ";
+    cout << "|       INPUT DATA FILM      |" << endl;
+    cout << "-------                -------" << endl;
+    cout << " Film      : ";
     cin >> film;
     infofilm(P).film = film;
-    cout << "Genre : ";
+    cout << " Genre     : ";
     cin >> genre;
     infofilm(P).genre = genre;
-    cout << "Sutradara : ";
+    cout << " Sutradara : ";
     cin >> sutradara;
     infofilm(P).sutradara = sutradara;
-    cout << "Budget : ";
+    cout << " Budget    : ";
     cin >> budget;
     infofilm(P).budget = budget;
-    cout << "Berhasil diinput" << endl;
+    cout << "|   TELAH BERHASIL DIINPUT   |" << endl;
+    cout << "------------------------------" << endl;
+    cout << " " << endl;
 }
 
 void insertlastFilm(listFilm &L, adrfilm P){
@@ -47,7 +51,8 @@ void editFilm(listFilm &L, adrfilm P){
     } else{
         string namafilm;
 
-        cout << "Masukkan film yang ingin dicari : ";
+        cout << " " << endl;
+        cout << " Masukkan nama film yang ingin diedit : ";
         cin >> namafilm;
 
         adrfilm Q;
@@ -59,19 +64,20 @@ void editFilm(listFilm &L, adrfilm P){
             string sutradara;
             int budget;
 
-            cout << "Nama Film : ";
+            cout << " Film      : ";
             cin >> film;
             infofilm(P).film = film;
-            cout << "Genre : ";
+            cout << " Genre     : ";
             cin >> genre;
             infofilm(P).genre = genre;
-            cout << "Sutradara : ";
+            cout << " Sutradara : ";
             cin >> sutradara;
             infofilm(P).sutradara = sutradara;
-            cout << "Budget : ";
+            cout << " Budget    : ";
             cin >> budget;
             infofilm(P).budget = budget;
-            cout << "Berhasil diedit" << endl;
+            cout << "|   TELAH BERHASIL DIEDIT   |" << endl;
+            cout << "-----------------------------" << endl;
         } else{
             cout << "Film tidak ditemukan" << endl;
         }
@@ -133,7 +139,7 @@ void deleteElmFilm(listFilm &L, adrfilm &P, string x){
             nextfilm(Q) = nextfilm(P);
             nextfilm(P) = NIL;
         }
-        cout << "Data berhasil dihapus" << endl;
+        cout << "|    DATA BERHASIL DIHAPUS    |" << endl;
      }
 }
 
@@ -159,19 +165,19 @@ void printFilm(listFilm L){
 
         P = firstfilm(L);
         while (P != lastfilm(L)){
-            cout << "~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~" << endl;
-            cout << "Film           : " << infofilm(P).film << endl;
-            cout << "Genre          : " << infofilm(P).genre << endl;
-            cout << "Sutradara      : " << infofilm(P).sutradara << endl;
-            cout << "Budget         : " << infofilm(P).budget << endl;
-            cout << "~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~" << endl;
+            cout << " ------------------------------ " << endl;
+            cout << " Film           : " << infofilm(P).film << endl;
+            cout << " Genre          : " << infofilm(P).genre << endl;
+            cout << " Sutradara      : " << infofilm(P).sutradara << endl;
+            cout << " Budget         : " << infofilm(P).budget << endl;
+            cout << " ------------------------------ " << endl;
             P = nextfilm(P);
         }
-        cout << "~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~" << endl;
-        cout << "Film           : " << infofilm(P).film << endl;
-        cout << "Genre          : " << infofilm(P).genre << endl;
-        cout << "Sutradara      : " << infofilm(P).sutradara << endl;
-        cout << "Budget         : " << infofilm(P).budget << endl;
-        cout << "~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~" << endl;
+        cout << " ------------------------------ " << endl;
+        cout << " Film           : " << infofilm(P).film << endl;
+        cout << " Genre          : " << infofilm(P).genre << endl;
+        cout << " Sutradara      : " << infofilm(P).sutradara << endl;
+        cout << " Budget         : " << infofilm(P).budget << endl;
+        cout << " ------------------------------ " << endl;
     }
 }
