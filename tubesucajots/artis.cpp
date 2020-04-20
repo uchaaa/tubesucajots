@@ -1,6 +1,6 @@
 #include "artis.h"
 
-void createListArtis(listArtis L){
+void createListArtis(listArtis &L){
     firstartis(L) = NULL;
     lastartis(L) = NULL;
 }
@@ -12,6 +12,8 @@ void createElmLA(adrartis &P){
     string nama;
     string aktor;
 
+    cout<<"-------------- Input Data Artis --------------"<<endl;
+    cout<<endl;
     cout<<"Nama Artis: ";
     cin>>nama;
     infoartis(P).nama = nama;
@@ -19,13 +21,13 @@ void createElmLA(adrartis &P){
     cout<<"Aktor/Aktris: ";
     cin>>aktor;
     infoartis(P).aktor = aktor;
+    cout<<endl;
+    cout<<"-------------- Data Berhasil Diinput --------------"<<endl;
 }
 void insertfirstArtis(listArtis &L, adrartis P){
     if(firstartis(L) == NULL && lastartis(L) == NULL){
         firstartis(L) = P;
         lastartis(L) = P;
-        prevartis(P) = NULL;
-        nextartis(P) = NULL;
     }else{
        prevartis(firstartis(L)) = P;
        nextartis(P) = firstartis(L);
