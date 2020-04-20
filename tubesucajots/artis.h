@@ -29,7 +29,7 @@ struct listArtis{
     adrartis lastartis;
 };
 
-void createListArtis(listArtis L);
+void createListArtis(listArtis &L);
 void createElmLA(adrartis &P);
 void insertfirstArtis(listArtis &L, adrartis P);
 void editArtis(listArtis &L, adrartis P);
@@ -41,4 +41,5 @@ void printArtis(listArtis L);
 
 
 #endif // ARTIS_H_INCLUDED
+
 
