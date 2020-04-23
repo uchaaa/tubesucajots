@@ -55,10 +55,9 @@ void editFilm(listFilm &L, adrfilm P){
         cout << " Masukkan nama film yang ingin diedit : ";
         cin >> namafilm;
 
-        adrfilm Q;
-        Q = caridataFilm(L, namafilm);
+        P = caridataFilm(L, namafilm);
 
-        if (Q != NIL){
+        if (P != NIL){
             string film;
             string genre;
             string sutradara;
@@ -162,22 +161,19 @@ void printFilm(listFilm L){
         cout << "Data tidak ada" << endl;
     } else{
         adrfilm P;
+        int i = 0;
 
         P = firstfilm(L);
         while (P != lastfilm(L)){
-            cout << " ------------------------------ " << endl;
-            cout << " Film           : " << infofilm(P).film << endl;
-            cout << " Genre          : " << infofilm(P).genre << endl;
-            cout << " Sutradara      : " << infofilm(P).sutradara << endl;
-            cout << " Budget         : " << infofilm(P).budget << endl;
-            cout << " ------------------------------ " << endl;
+            i = i + 1;
+            cout << " --------------------------------- " << endl;
+            cout << i << ". Film           : " << infofilm(P).film << endl;
+            cout << "   Genre          : " << infofilm(P).genre << endl;
+            cout << "   Sutradara      : " << infofilm(P).sutradara << endl;
+            cout << "   Budget         : " << infofilm(P).budget << endl;
             P = nextfilm(P);
+            cout << " --------------------------------- " << endl;
         }
-        cout << " ------------------------------ " << endl;
-        cout << " Film           : " << infofilm(P).film << endl;
-        cout << " Genre          : " << infofilm(P).genre << endl;
-        cout << " Sutradara      : " << infofilm(P).sutradara << endl;
-        cout << " Budget         : " << infofilm(P).budget << endl;
-        cout << " ------------------------------ " << endl;
+        cout<<endl;
     }
 }
