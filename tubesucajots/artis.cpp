@@ -132,18 +132,17 @@ void printArtis(listArtis L){
         cout<<"Data tidak ada"<<endl;
     }else{
         adrartis P;
+        int i = 0;
 
         P = firstartis(L);
         while(P != lastartis(L)){
-            cout<<"~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~"<<endl;
-            cout<<"Nama artis   : "<<infoartis(P).nama<<endl;
-            cout<<"Aktor/Aktris : "<<infoartis(P).aktor<<endl;
-            cout<<"~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~"<<endl;
+            i = i + 1;
+            cout<<"~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~"<<endl;
+            cout<< i << ". Nama artis   : "<<infoartis(P).nama<<endl;
+            cout<<"   Aktor/Aktris : "<<infoartis(P).aktor<<endl;
             P = nextartis(P);
+            cout<<"~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~"<<endl;
         }
-        cout<<"~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~"<<endl;
-        cout<<"Nama artis   : "<<infoartis(P).nama<<endl;
-        cout<<"Aktor/Aktris : "<<infoartis(P).aktor<<endl;
-        cout<<"~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~"<<endl;
+        cout<<endl;
     }
 }
