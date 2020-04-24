@@ -11,19 +11,21 @@ void createElmLA(adrartis &P){
 
     string nama;
     string aktor;
-
-    cout<<"-------------- Input Data Artis --------------"<<endl;
-    cout<<endl;
-    cout<<"Nama Artis: ";
+    cout << endl;
+    cout << "                | Tambah Data Artis |                " << endl;
+    cout << "              --------------------------             " << endl;
+    cout << " --------------------------------------------------- " << endl;
+    cout<<" Nama Artis   : ";
     cin>>nama;
     infoartis(P).nama = nama;
-
-    cout<<"Aktor/Aktris: ";
+    cout<<" Aktor/Aktris : ";
     cin>>aktor;
     infoartis(P).aktor = aktor;
-    cout<<endl;
-    cout<<"-------------- Data Berhasil Diinput --------------"<<endl;
+    cout << endl;
+    cout << " ---------------- Berhasil Diinput! ---------------- " << endl;
+    cout << " --------------------------------------------------- " << endl << endl;
 }
+
 void insertfirstArtis(listArtis &L, adrartis P){
     if(firstartis(L) == NULL && lastartis(L) == NULL){
         firstartis(L) = P;
@@ -36,11 +38,16 @@ void insertfirstArtis(listArtis &L, adrartis P){
 }
 void editArtis(listArtis &L, adrartis P){
     if(firstartis(L) == NULL && lastartis(L) == NULL){
-        cout<<"Data artis tdk ada"<<endl;
+        cout << endl;
+        cout << " ------------- Data artis tidak ada ------------- " << endl;
+        cout << " ------------------------------------------------ " << endl << endl;
     }else{
         string namaartis;
-
-        cout<<"Masukkan nama artis yang ingin diedit: ";
+        cout << endl;
+        cout << "                  | Edit Data Film |                 " << endl;
+        cout << "              --------------------------             " << endl;
+        cout << " --------------------------------------------------- " << endl;
+        cout << " Masukkan nama artis yang ingin diedit : ";
         cin>>namaartis;
 
         adrartis Q;
@@ -50,60 +57,71 @@ void editArtis(listArtis &L, adrartis P){
             string namaartis;
             string aktor;
 
-            cout<<"Nama artis: ";
+            cout<<" Nama artis : ";
             cin>>namaartis;
             infoartis(P).nama = namaartis;
 
-            cout<<"Aktor/Aktris: ";
+            cout<<" Aktor/Aktris : ";
             cin>>aktor;
             infoartis(P).aktor = aktor;
-
-            cout<<"Berhasil diedit"<<endl;
+            cout << endl;
+            cout << " --------------- Berhasil Diedit! --------------- " << endl;
+            cout << " ------------------------------------------------ " << endl << endl;
         }else{
-            cout<<"Artis tidak ditemukan"<<endl;
+        cout << endl;
+        cout << " ---------- Data artis tidak ditemukan ---------- " << endl;
+        cout << " ------------------------------------------------ " << endl << endl;
         }
     }
 }
 void deletefirstArtis(listArtis &L, adrartis &P){
     if(firstartis(L) == NULL && lastartis(L) == NULL){
-        cout<<"Artis tidak diketahui"<<endl;
+        cout << endl;
+        cout << " ------------ Artis tidak diketahui ------------- " << endl;
+        cout << " ------------------------------------------------ " << endl << endl;
     }else if(firstartis(L) == lastartis(L)){
         firstartis(L) = NULL;
         lastartis(L) = NULL;
     }else{
         P = firstartis(L);
-        nextartis(P) = NULL;
-        prevartis(nextartis(P)) = NULL;
         firstartis(L) = nextartis(P);
+        prevartis(firstartis(L)) = NIL;
+        nextartis(P) = NIL;
     }
 }
 void deletelastArtis(listArtis &L, adrartis &P){
     if(firstartis(L) == NULL && lastartis(L) == NULL){
-        cout<<"Artis tidak diketahui"<<endl;
+        cout << endl;
+        cout << " ------------ Artis tidak diketahui ------------- " << endl;
+        cout << " ------------------------------------------------ " << endl << endl;
     }else if(firstartis(L) == lastartis(L)){
         firstartis(L) = NULL;
         lastartis(L) = NULL;
     }else{
         P = lastartis(L);
-        prevartis(P) = NULL;
-        nextartis(prevartis(P)) = NULL;
         lastartis(L) = prevartis(P);
+        prevartis(P) = NIL;
+        nextartis(lastartis(L)) = NIL;
     }
 }
 void deleteElmArtis(listArtis &L, adrartis &P, string x){
     if(firstartis(L) == NULL && lastartis(L) == NULL){
-        cout<<"Artis tidak ditemukan"<<endl;
+        cout << endl;
+        cout << " ---------- Data artis tidak ditemukan ---------- " << endl;
+        cout << " ------------------------------------------------ " << endl << endl;
     }else {
         adrartis Q;
 
         P = caridataArtis(L,x);
         if(P == NULL){
-            cout<<"Data artis tidak ditemukan"<<endl;
-        }else if(P == firstartis(L)){
+            cout << endl;
+            cout << " ---------- Data artis tidak ditemukan ---------- " << endl;
+            cout << " ------------------------------------------------ " << endl << endl;
+        } else if(P == firstartis(L)){
             deletefirstArtis(L,P);
-        }else if(P == lastartis(L)){
+        } else if(P == lastartis(L)){
             deletelastArtis(L,P);
-        }else{
+        } else{
             Q = firstartis(L);
             while(nextartis(Q) != P){
                 nextartis(Q) = Q;
@@ -111,14 +129,16 @@ void deleteElmArtis(listArtis &L, adrartis &P, string x){
             nextartis(Q) = nextartis(P);
             nextartis(P) = NULL;
         }
-        cout<<"Data berhasil dihapus"<<endl;
+        cout << endl;
+        cout << " -------------- Berhasil Dihapus! --------------- " << endl;
+        cout << " ------------------------------------------------ " << endl << endl;
     }
 }
 adrartis caridataArtis(listArtis L, string x){
     adrartis Q;
 
     Q = firstartis(L);
-    while(Q != lastartis(L) && infoartis(Q).nama != x){
+    while(nextartis(Q) != NIL && infoartis(Q).nama != x){
         Q = nextartis(Q);
     }
     if(infoartis(Q).nama == x){
@@ -129,20 +149,30 @@ adrartis caridataArtis(listArtis L, string x){
 }
 void printArtis(listArtis L){
     if(firstartis(L) == NULL && lastartis(L) == NULL){
-        cout<<"Data tidak ada"<<endl;
+        cout << endl;
+        cout << " ---------------- Data tidak ada ---------------- " << endl;
+        cout << " ------------------------------------------------ " << endl << endl;
     }else{
         adrartis P;
         int i = 0;
 
         P = firstartis(L);
+        cout << " :::::::::::::::::::::::::::::::::::::::::::::::::::: " << endl;
+        cout << " :::              DATA ARTIS TERBARU              ::: " << endl;
+        cout << " :::::::::::::::::::::::::::::::::::::::::::::::::::: " << endl << endl;
+
         while(P != lastartis(L)){
             i = i + 1;
-            cout<<"~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~"<<endl;
-            cout<< i << ". Nama artis   : "<<infoartis(P).nama<<endl;
-            cout<<"   Aktor/Aktris : "<<infoartis(P).aktor<<endl;
+            cout << " ---------------------------------------------------- " << endl;
+            cout << " " << i << ". Nama Artis     : "<<infoartis(P).nama<<endl;
+            cout << "    Aktor/Aktris   : " <<infoartis(P).aktor<<endl;
             P = nextartis(P);
-            cout<<"~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~"<<endl;
+            cout << " ---------------------------------------------------- " << endl;
         }
-        cout<<endl;
+        i = i + 1;
+        cout << " ---------------------------------------------------- " << endl;
+        cout << " " << i << ". Nama Artis     : "<<infoartis(P).nama<<endl;
+        cout << "    Aktor/Aktris   : " <<infoartis(P).aktor<<endl;
+        cout << " ---------------------------------------------------- " << endl << endl;
     }
 }
