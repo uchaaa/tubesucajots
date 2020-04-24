@@ -14,6 +14,7 @@ using namespace std;
 struct artis{
     string nama;
     string aktor;
+    int jumlahtampil;
 };
 
 typedef struct elmArtis *adrartis;
@@ -39,7 +40,4 @@ void deleteElmArtis(listArtis &L, adrartis &P, string x);
 adrartis caridataArtis(listArtis L, string x);
 void printArtis(listArtis L);
 
-
 #endif // ARTIS_H_INCLUDED
-
-
